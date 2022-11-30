@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf16686070219860" configfile="/BetsJSF/src/main/webapp/WEB-INF/faces-config.xml">
-  <nodes xsi:type="pageflow:PFPage" name="Index.xhtml" x="192" y="312" id="pf16686078406911" outlinks="pf16686078406912" path="/Index.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="QueryQuestion.xhtml" x="488" y="169" id="pf16686078406913" inlinks="pf16686078406912" path="/QueryQuestion.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="Index.xhtml" x="192" y="312" id="pf16686078406911" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf16686078406912" path="/Index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="QueryQuestion.xhtml" x="488" y="169" id="pf16686078406913" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf16686078406912" path="/QueryQuestion.xhtml"/>
   <links id="pf16686078406912" target="pf16686078406913" source="pf16686078406911" outcome="QueryQuestion"/>
 </pageflow:Pageflow>

@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html;" />
+	<title><ui:insert name="titulo">Título por definir...</ui:insert></title>
+	<style>
+		#menu a {
+			display: block;
+			text-align: center;
+			color: #5F83B9;
+			text-decoration: none;
+			text-transform: uppercase;
+		}
+		
+		#menu a:hover {
+			background-color: #5F83B9;
+			color: white;
+		}
+		
+		.error {
+			color: #F44336;
+		}
+	</style>
+</h:head>
+<h:body>
+	<h1 align="center">
+		<img src="http://www.ehu.eus/documents/340468/5849813/Biling%C3%BCe_positivo_baja.jpg" width="500" height="70" />
+	</h1>
+	<h:panelGrid columns="2" align="center" border="3" cellpadding="10" cellspacing="1">
+		<h:panelGrid columns="1" id="menu">
+			<h:link value="Inicio" outcome="Inicio" />
+			<h:link value="Añadir preguntas" outcome="MeterPreguntas" />
+			<h:link value="Ver preguntas" outcome="VerPreguntas" />
+		</h:panelGrid>	
+		<h:panelGrid columns="1">
+			<ui:insert name="cuerpo">Cuerpo</ui:insert>
+		</h:panelGrid>
+	</h:panelGrid>
+	<ui:insert name="pie-pagina">
+		<h4 align="center">&#169; Ingeniería del Software II</h4>
+	</ui:insert>
+</h:body>
+</html>

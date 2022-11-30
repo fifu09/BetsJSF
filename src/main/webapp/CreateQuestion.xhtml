@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:ui="http://java.sun.com/jsf/facelets"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:p="http://primefaces.org/ui">
+<f:view>
+<h:head>
+		<title>Aplicación de Java Server Faces</title>
+	</h:head>
+	<ui:composition template="/WEB-INF/templates/Template.xhtml">
+		<ui:define name="titulo">
+		Creacion de pregunta
+	</ui:define>
+		<ui:define name="cuerpo">
+			<h:form>
+				<h1>Apartado de creacion de pregunta</h1>
+					
+				<h2>Elige un dia del calendario</h2>
+				<p:calendar id="fecha" value="#{createBean.fecha}" navigator="false" mode="inline">
+					</p:calendar>
+				 <h2>
+					<h:outputText value="Fecha seleccionada: #" id="date" />
+				</h2>
+				<h2>Pregunta</h2>
+			Crear pregunta para el evento:
+			<h:inputText id="pregunta" value="#{createBean.nuevaPregunta}" size="50" required="true">
+					<f:ajax pass="pregunta" render=""></f:ajax>
+				</h:inputText>
+				<br />
+			Apuesta mínima:
+			<h:inputText id="apuesta" value="#{createBean.apuestaMinima}">
+					<f:validateLongRange minimum="1" maximum="999999" />
+					<f:ajax pass="apuesta" render="mensajes"></f:ajax>
+				</h:inputText>
+				<br />
+				<h:messages id="mensajes" class="error"></h:messages>
+				<h:commandButton value="Aceptar" action="#"/>
+			</h:form>
+		</ui:define>
+	</ui:composition>
+</f:view>
+</html>
