@@ -10,18 +10,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h3>Elige una opción</h3>
-	<p>
-		<h:button value="QUERY QUESTIONS" outcome="QueryQuestion" />
-	</p>
-	<p>
-		<h:button value="CREATE QUESTION" outcome="CreateQuestion" />
-	</p>
-
-	<h:selectOneRadio value="#">
-		<f:selectItem itemValue="Eu" itemLabel="Euskara" />
-		<f:selectItem itemValue="Es" itemLabel="Español" />
-		<f:selectItem itemValue="In" itemLabel="Ingles" />
-	</h:selectOneRadio>
+	<ui:composition template="/WEB-INF/templates/Template.xhtml">
+		<ui:define name="titulo">
+		Creacion de pregunta
+	</ui:define>
+		<ui:define name="cuerpo">
+			<h:form>
+				<img src="imagen.jpg"/>
+			</h:form>
+		</ui:define>
+	</ui:composition>
 </body>
 </html>

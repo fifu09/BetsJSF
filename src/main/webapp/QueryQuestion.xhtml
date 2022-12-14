@@ -19,11 +19,17 @@ xmlns:p="http://primefaces.org/ui">
 					
 				<h2>Elige un dia del calendario</h2>
 				<p:calendar id="fecha" value="#{createBean.fecha}" navigator="false" mode="inline">
-						<p:ajax event="dateSelect" listener="#{createBean.onDateSelect}" update="date" />
+						<p:ajax event="dateSelect" listener="#{createBean.onDateSelect}" update="date listaEventos" />
 					</p:calendar>
 				 <h2>
 					<h:outputText value="#{createBean.fechaString}" id="date" />
 				</h2>
+			 <h:dataTable id="listaEventos" value="#{createBean.eventos}" var="evento">
+			        <h:column>
+			            <f:facet name="header">Titulo</f:facet>
+			            #{evento.description}
+			        </h:column>
+			    </h:dataTable>
 			</h:form>
 		</ui:define>
 	</ui:composition>

@@ -2,9 +2,14 @@ package modelo;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import org.primefaces.event.SelectEvent;
+
+import domain.Event;
+import modelo.dominio.DataAccessJSF;
 
 
 
@@ -13,8 +18,12 @@ public class createBean {
 	private String fechaString;
 	private String nuevaPregunta;
 	private double apuestaMinima;
+	private DataAccessJSF da = new DataAccessJSF();
+	private List<Event> eventos = new ArrayList<Event>();
 	
-	public createBean() {}
+	
+	public createBean() {
+	}
 	
 	public String getNuevaPregunta() {
 		return nuevaPregunta;
@@ -41,6 +50,20 @@ public class createBean {
 	}
 	public void setApuestaMinima(Double apuestaMinima) {
 		this.apuestaMinima = apuestaMinima;
+	}
+	public DataAccessJSF getDa() {
+		return da;
+	}
+
+	public void setDa(DataAccessJSF da) {
+		this.da = da;
+	}
+	public List<Event> getEventos() {
+		return da.getEvents(fecha);
+	}
+
+	public void setEventos(List<Event> eventos) {
+		this.eventos = eventos;
 	}
 	public void onDateSelect(SelectEvent evento) {
 		this.fecha = (Date) evento.getObject();
